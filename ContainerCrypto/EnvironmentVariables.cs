@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,7 +14,7 @@ namespace ContainerCrypto
             {
                 var workingDirectory = GetEnvironmentVariable("Fabric_Folder_App_Work");
                 var certificatePfxFileName = GetEnvironmentVariable("Custom_PfxFileName");
-                return $"{workingDirectory}{certificatePfxFileName}";
+                return Path.Combine(workingDirectory, certificatePfxFileName);
             }
         }
 
@@ -23,7 +24,7 @@ namespace ContainerCrypto
             {
                 var workingDirectory = GetEnvironmentVariable("Fabric_Folder_App_Work");
                 var certificatePfxPasswordFileName = GetEnvironmentVariable("Custom_PfxPasswordFileName");
-                return $"{workingDirectory}{certificatePfxPasswordFileName}";
+                return Path.Combine(workingDirectory, certificatePfxPasswordFileName);
             }
         }
 
