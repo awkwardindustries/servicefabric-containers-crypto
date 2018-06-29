@@ -24,6 +24,7 @@ namespace ContainerCrypto
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton<IStringCryptoService, CertStringCryptoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
