@@ -27,6 +27,7 @@
     </EntryPoint>
     <!-- Pass environment variables to your container: -->
     <EnvironmentVariables>
+      <EnvironmentVariable Name="Custom_CertThumbprint" Value="B17E9C14B889E652975343A8AB94EB08406DFC82"/>
       <EnvironmentVariable Name="Custom_PfxFileName" Value="CustomCert.pfx"/>
       <EnvironmentVariable Name="Custom_PfxPasswordFileName" Value="CustomCertPassword.pfx"/>
     </EnvironmentVariables>
@@ -41,7 +42,7 @@
       <!-- This endpoint is used by the communication listener to obtain the port on which to
            listen. Please note that if your service is partitioned, this port is shared with
            replicas of different partitions that are placed in your code. -->
-      <Endpoint Protocol="http" Name="ContainerCryptoTypeEndpoint" Type="Input" Port="8494" />
+      <Endpoint Protocol="http" Name="ContainerCryptoTypeEndpoint" Type="Input" Port="8080" />
     </Endpoints>
   </Resources>
 </ServiceManifest>

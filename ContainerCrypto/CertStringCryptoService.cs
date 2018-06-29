@@ -13,6 +13,7 @@ namespace ContainerCrypto
 
         public string Decrypt(string base64EncodedTextToDecrypt)
         {
+            EnsurePrivateKey();
             var contentToDecrypt = Convert.FromBase64String(base64EncodedTextToDecrypt);
             var decryptedBytes = privateKey.Decrypt(contentToDecrypt, RSAEncryptionPadding.Pkcs1);
             return Encoding.Default.GetString(decryptedBytes);
@@ -20,6 +21,7 @@ namespace ContainerCrypto
 
         public string Encrypt(string plainTextToEncrypt)
         {
+            EnsurePublicKey();
             var contentToEncrypt = Encoding.Default.GetBytes(plainTextToEncrypt);
             var encryptedBytes = publicKey.Encrypt(contentToEncrypt, RSAEncryptionPadding.Pkcs1);
             return Convert.ToBase64String(encryptedBytes);
