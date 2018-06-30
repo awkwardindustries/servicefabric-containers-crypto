@@ -29,7 +29,7 @@
     <EnvironmentVariables>
       <EnvironmentVariable Name="Custom_CertThumbprint" Value="B17E9C14B889E652975343A8AB94EB08406DFC82"/>
       <EnvironmentVariable Name="Custom_PfxFileName" Value="CustomCert.pfx"/>
-      <EnvironmentVariable Name="Custom_PfxPasswordFileName" Value="CustomCertPassword.pfx"/>
+      <EnvironmentVariable Name="Custom_PfxPasswordFileName" Value="CustomCertPassword.txt"/>
     </EnvironmentVariables>
   </CodePackage>
 
